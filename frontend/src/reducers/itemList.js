@@ -10,7 +10,6 @@ import {
   PROFILE_PAGE_UNLOADED,
   PROFILE_FAVORITES_PAGE_LOADED,
   PROFILE_FAVORITES_PAGE_UNLOADED,
-  UPDATE_TITLE_SEARCH_VALUE,
 } from "../constants/actionTypes";
 
 const reducer = (state = {}, action) => {
@@ -77,11 +76,6 @@ const reducer = (state = {}, action) => {
         items: action.payload[1].items,
         itemsCount: action.payload[1].itemsCount,
         currentPage: 0,
-      };
-    case UPDATE_TITLE_SEARCH_VALUE:
-      return {
-        ...state,
-        searchValue: action.payload.searchValue,
       };
     case PROFILE_PAGE_UNLOADED:
     case PROFILE_FAVORITES_PAGE_UNLOADED:
