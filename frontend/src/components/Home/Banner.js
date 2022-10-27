@@ -4,7 +4,7 @@ import SearchBar from "./SearchBar";
 
 class Banner extends React.Component {
   state = {
-    hideSearchField: true,
+    showSearchField: false,
   };
   render() {
     return (
@@ -16,15 +16,15 @@ class Banner extends React.Component {
             <span
               id="get-part"
               onClick={(_) => {
-                this.setState({ hideSearchField: false });
+                this.setState({ showSearchField: true });
               }}
             >
               {" "}
               get{" "}
             </span>
-            <span hidden={this.state.hideSearchField}>
+            {this.state.showSearchField && (
               <SearchBar />
-            </span>
+            )}
             <span> the cool stuff.</span>
           </div>
         </div>
